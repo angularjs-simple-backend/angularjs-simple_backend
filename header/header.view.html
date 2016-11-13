@@ -1,0 +1,17 @@
+<div ng-controller="HeaderCtrl" >
+<div class="top-bar"  ng-if="login==true">
+<div class="info"><i class="fa fa-lock" aria-hidden="true"></i>
+Hi <span ng-bind="user"></span>
+<span ng-click="logout()" class="logout" >Logout</span>
+</div>
+</div>
+
+
+<div  ng-if="login==true" ng-class="LoadMenuClass()">
+<span  ng-click="switchMenuClass()" class="expandbutton" ><i  ng-class="{'fa fa-arrow-circle-o-right fa-1x': !isActive, 'fa fa-arrow-circle-o-left fa-1x': isActive}" aria-hidden="true"></i></span>
+<input type="text" class="search_function" ng-model="search.name" placeholder="Filter by name">
+<span ng-repeat="item in items | filter:search | orderBy:'value.order'" ng-click="link(item.link);" title="{{item.name}}" class="menuitem"><i class="fa {{item.icon}}" aria-hidden="true"></i> <span class="title"  ng-bind="item.name"></span></span>
+</div>
+
+
+</div>

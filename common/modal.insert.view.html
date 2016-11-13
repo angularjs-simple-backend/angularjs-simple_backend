@@ -1,0 +1,20 @@
+
+        <div class="modal-header">
+            <h3 class="modal-title">Create a record</h3>
+        </div>
+        <div class="modal-body">
+
+				<div class="form-group" ng-repeat="(key, value) in items">
+					<label for="{{key}}">{{key}}</label>
+				  	<input  class="form-control"   ng-model="items[key]"  ng-disabled="checkDisable(key)">
+					
+				</div>
+
+           
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn btn-primary" ng-click="insert()"><i class="fa fa-spinner faa-spin animated" ng-show="loading"></i><span ng-show="!loading"> Insert</span></button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+   

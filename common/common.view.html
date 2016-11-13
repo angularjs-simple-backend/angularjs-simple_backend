@@ -1,0 +1,46 @@
+﻿  <div class="well"> 
+ <div class="row"> 
+ <div class="col-sm-12">Table:{{table}}:
+ <ng-pluralize  count="totalItems"
+                 when="{'0': 'No record.',
+                     'one': '1 Record.',
+                     'other': '{} Records'}">
+</ng-pluralize>
+
+</div>
+ </div>
+ <div class="row">
+	<div class="col-sm-12">
+	
+	<button ng-click="createItems()" class="btn btn-default">Create</button>
+	<button class="btn btn-default" ng-click="deleteItems()"><i class="fa fa-times fa-lg" aria-hidden="true"></i>Delete</button>
+	<button class="btn btn-default" ng-click="tableEdit()"><i class="fa fa-wrench fa-lg" aria-hidden="true"></i> Config</button>
+	
+	<div class="input-group searchbox">
+	     
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="keyword">
+      <span class="input-group-btn">
+	  <button class="btn btn-secondary" type="button" ng-click="search(keyword)">Search</button>
+      </span>
+    </div>
+	 </div>
+  </div>
+<div class="row"> 
+<div class="col-sm-12">
+<ul class="listview">
+<li ng-repeat-start="item in items" ng-if="$first">
+<rows-header fields='item' propeties='tableconfig'  sort='sort'></rows-header>
+</li>
+
+<li ng-repeat-end  >
+<rows fields='item'  propeties='tableconfig'  table='table' primarykey='primary_key'  index="$index"></rows>
+</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<uib-pagination ng-show ="totalItems>itemsPerPage" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="10" boundary-link-numbers="true" boundary-links="true" items-per-page="itemsPerPage"></uib-pagination>
+</div>
+</div>
+</div>

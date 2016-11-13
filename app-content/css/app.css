@@ -1,0 +1,177 @@
+﻿.top-bar{
+	display:block;
+	position:fixed;
+	height:30px;
+	top:0;
+	right:0;
+	left:0;	
+	z-index:100;
+	padding:5px 5px;	
+}
+.info{
+	float:right;
+}
+.app
+{
+margin-top:25px;	
+}
+.sidemenu {
+    background: #f5f5f5 none repeat scroll 0 0;
+    display: block;
+    height: 98%;
+    left: 0;
+     position: fixed;
+    top: 10px;
+    width: 40px;
+	z-index: 100;
+
+}
+
+.sidemenu span.menuitem  {
+    color: #555;
+    display: block;
+    font-size: 26px;
+    height: 35px;
+    line-height: 30px;
+	margin:5px 5px;
+
+    display: flex;
+	cursor:pointer;
+	margin-left: 6px;
+	padding-top: 5px;
+}
+.sidemenu .menuitem :hover
+{
+	background: #CCC;
+}
+.sidemenu .title
+{
+ display:none;
+ font-size: 16px;
+ white-space: nowrap;
+     margin-left: 6px;
+}
+.expandbutton
+{
+ background: #993 !important;
+ width: 100% !important;
+ display:block;
+}
+.expand
+{
+width:250px !important;
+overflow-x: auto;
+}
+.expand .title
+{
+display:inline-block !important;
+
+}
+.expand .menuitem
+{
+
+}
+
+.listview,.nolistyle
+{
+list-style-type: none;
+    -webkit-padding-start: 0px;
+}
+.chk,.chkall
+{
+	padding:5px;
+margin-right: 5px;
+margin-bottom: 5px;		
+	display:inline-block;
+	
+	
+}
+
+.field,.fieldheader
+{
+padding:5px;
+margin-right: 5px;
+margin-bottom: 5px;	
+width:90px;
+min-width:90px;
+display:inline-block;
+white-space: nowrap;
+overflow:hidden;
+}
+.fieldheader,.chkall
+{
+background:#CCC;	
+}
+.row-item,.row-header
+{
+display: inline-flex;
+border:1px solid;	
+}
+.row-item:hover
+{
+background:#AAA;		
+}
+.modal {
+display: block;
+}
+.modal-body
+{
+	 max-height: 600px;
+    overflow-x: auto;
+	
+}
+.table-edit-button
+{
+	padding:5px;
+}
+.table-edit-button:hover
+{
+	background:#CCC;
+	
+}
+.main-view
+{
+	margin-left:40px;
+}
+.searchbox
+{
+width:300px;
+display: inline-flex;	
+}
+/*search box*/
+/*end search box*/
+.setting-width
+{
+width:100px;	
+}
+.setting-order
+{
+width:40px;	
+}
+.setting-order::-webkit-outer-spin-button,
+.setting-order::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.html_template_textarea 
+{
+width:100%;
+min-height:200px;		
+	
+}
+.html_edit_field_list li:hover
+{
+background-color:#CCC;	
+cursor:pointer;
+}
+.search_function
+{
+display:none;
+width:100%;	
+}
+.expand .search_function
+{
+display:block;	
+}

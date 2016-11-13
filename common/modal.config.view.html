@@ -1,0 +1,61 @@
+
+        <div class="modal-header">
+            <h3 class="modal-title">Config rows</h3>
+        </div>
+        <div class="modal-body">
+
+		<!--columns-->	
+		<div class="row" >
+			<div class="col-sm-12">
+			<form name="formConfig">
+			<table>
+    
+					<tr>
+					<td>Name</td>
+					<td>search</td>
+					<td>Show</td>
+					<td>Title</td>
+					<td>Width</td>
+					<td>Control</td>
+					<td>Link table</td>
+					<td>Display field</td>
+					
+					</tr>
+					<tbody>
+					<tr ng:repeat="e in items">
+					
+					<td>{{e.name}}</td>
+					<td><input type="checkbox" ng-model="e.value.search"    /></td>
+					<td><input type="checkbox" ng-model="e.value.enable"    /></td>
+					<td><input type="text" ng-model="e.value.title" ng-if="e.value.enable"  placeholder="{{e.name}}" class="seting-title"    /></td>
+					<td><input type="number" ng-model="e.value.width" ng-if="e.value.enable"  placeholder="90 px" class="setting-width"/></td>
+					<td><select ng-if="e.value.enable"  ng-options=" option.name for option in options track by option.id" ng-model="e.value.editform" ></select></td>
+					<td>
+					<select ng-if="e.value.editform.id=='link'"   ng-options="option.name  as option.name for option in listtable" ng-model="e.value.editform.link" ng-init="loadFields(e.value.editform.link)" ng-change="loadFields(e.value.editform.link)" ></select>
+					<select ng-if="e.value.editform.id=='list'"   ng-options="option.name  as option.name for option in listtable" ng-model="e.value.editform.list" ng-init="loadFields(e.value.editform.list)" ng-change="loadFields(e.value.editform.list)" ></select>
+					<input  ng-if="e.value.editform.id=='html'" type="hidden" ng-model="e.value.editform.htmltemplate"  />
+					<input type="button" value="$$" ng-if="e.value.editform.id=='html'" text="html" ng-click="editHTML(e.value.editform)">
+					</td>
+					<td><select ng-if="e.value.editform.id=='link'"  ng-options="option.name  as option.name for option in fieldlist[e.value.editform.link]"  ng-model="e.value.editform.displayfield" ></select>
+						<select ng-if="e.value.editform.id=='list'"  ng-options="option.name  as option.name for option in fieldlist[e.value.editform.list]"  ng-model="e.value.editform.displayfield" ></select>
+					</td>
+					
+					</td>
+
+					</tr>
+					
+					
+				</tbody>
+			</table>
+			</form>
+			</div >
+		</div>
+		<!--/columns-->	
+           
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn btn-primary" ng-click="save()"><i class="fa fa-spinner faa-spin animated" ng-show="loading"></i><span ng-show="!loading"> Save</span></button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+   

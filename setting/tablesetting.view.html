@@ -1,0 +1,47 @@
+﻿<div class="row"> 
+  
+	<div class="col-sm-12">
+	<button ng-click="save()">Save</button>
+	</div>
+	
+  </div>
+<div class="row"> 
+<div class="col-sm-12">
+
+<table class="table-config" border="1">
+    
+		<tr class="table-config-header">
+		<td>Name</td>
+		<td>Enable</td>
+		<td>Title</td>
+		<td>Icon</td>
+		<td>Sort</td>
+		</tr>
+		<tbody>
+        <tr ng:repeat="e in items | orderBy:'value.order'" class="table-config-header">
+		<td>{{e.name}}
+		
+		</td>
+		<td>
+		<input type="checkbox" ng-model="e.value.enable"   />
+		<div ng-if="group" ng-show="e.value.enable" >
+		<div ng-repeat="g in group">
+		<input type="checkbox"  ng-model="e.value.group[g.name]" >
+		<label ng-bind-html="g.name"></label>
+		
+		</div>
+		
+		</div>
+		</td>
+		
+		<td><input type="text" ng-model="e.value.title" ng-show="e.value.enable"  placeholder="{{e.name}}" class="seting-title"    /></td>
+		<td><input-icon ng-show="e.value.enable"  class="seting-icon"  model="e.value.icon"></input-icon> <i ng-show="e.value.enable" class="fa {{e.value.icon}} fa-lg" aria-hidden="true"></i></td>
+		<td><input type="text" ng-model="e.value.order"  placeholder="Sort"  class="setting-order" ng-init="e.value.order=(e.value.order)?e.value.order:$index"  ng-show="e.value.enable"/><i class="fa fa-arrow-circle-up" aria-hidden="true" ng-click="e.value.order=move(e.value.order,-1)" ng-show="e.value.enable"></i><i class="fa fa-arrow-circle-down" aria-hidden="true" ng-click="e.value.order=move(e.value.order,+1)" ng-show="e.value.enable"></i></td>
+		</tr>
+    </tbody>
+</table>
+
+
+</div> 
+</div>
+

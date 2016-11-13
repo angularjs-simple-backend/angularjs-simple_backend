@@ -1,0 +1,5 @@
+<div class="row-header">
+<span class="chkall"><input type="checkbox" ng-model="checkall" ng-click="selectAll($event)" ng-checked="isSelectedAll()"></span>
+<span ng-repeat="(key, value) in fields"  class="fieldheader "  ng-style="getStyle(key)"  ng-show="Enable(key)"  ng-bind-html="showTitle(key)" ng-click="sortBy(key)"></span>
+<span class="key fieldheader">Action</span>
+</div>

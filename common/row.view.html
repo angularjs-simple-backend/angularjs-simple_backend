@@ -1,0 +1,6 @@
+<div class="row-item" ng-show="getShow()">
+<span class="chk"><input type="checkbox" name="chkitem"  value="{{fields[primarykey]}}" data-index="{{index}}" ></span>
+<span ng-repeat='(key, value) in fields' ng-class="key" class="field" ng-style="getStyle(key)"  ng-show="Enable(key)" ng-bind-html="show_value(value,fields,key)"></span>
+<span class="field key"><button ng-click="viewEdit(fields)"><i class="fa fa-pencil-square-o" aria-hidden="true"> Edit</i></button><button ng-click="viewDelete(fields)"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+
+</div>
